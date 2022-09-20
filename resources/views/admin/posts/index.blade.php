@@ -26,17 +26,17 @@
                 <td>{{ $post->post_image }}</td>
                 <td>{{ $post->post_date }}</td>
                 <td>
-                    <a href="" class="btn btn-success">
+                    <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-success">
                         <h2> modifica </h2>
                     </a>
                 </td>
                 <td>
-                    <a href="" class="btn btn-danger">
+                    <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-danger">
                         <h2> visualizza </h2>
                     </a>
                 </td>
                 <td>
-                    <form action="{{}}" method="POST">
+                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 

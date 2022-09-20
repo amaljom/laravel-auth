@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form class="w-50 mx-auto" action="{{ route('admin.posts.store') }} " method="GET">
+<form class="w-50 mx-auto" action="{{ route('admin.posts.store') }} " method="POST">
 @csrf
     <div class="form-group">
         <label for="author">author</label>

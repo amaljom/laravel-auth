@@ -36,7 +36,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newPost = new Post;
+        $newPost->author = $data['author'];
+        $newPost->title = $data['title'];
+        $newPost->post_content = $data['post_content'];
+        $newPost->post_image = $data['post_image'];
+        $newPost->post_date = $data['post_date'];
+            
+        $newPost->save();
+
+        return redirect()->route('admin.posts.index', $newComic->id);
     }
 
     /**

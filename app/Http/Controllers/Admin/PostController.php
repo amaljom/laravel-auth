@@ -46,7 +46,7 @@ class PostController extends Controller
             
         $newPost->save();
 
-        return redirect()->route('admin.posts.show', $newComic->id)->with('created', $data['author']);
+        return redirect()->route('admin.posts.show', $newPost->id)->with('created', $data['author']);
     }
 
     /**
@@ -82,14 +82,13 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post=Post::findOrFail($id);
-
         $post->author = $data['author'];
         $post->title = $data['title'];
         $post->post_content = $data['post_content'];
         $post->post_image = $data['post_image'];
         $post->post_date = $data['post_date'];
             
-        $newPost->save();
+        $post->save();
 
         return redirect()->route('admin.posts.show', $post->id)->with('edited', $post->title);
     }

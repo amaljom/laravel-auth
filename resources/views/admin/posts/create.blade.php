@@ -6,28 +6,28 @@
 @csrf
     <div class="form-group">
         <label for="author">author</label>
-        <input type="text" class="form-control" id="author">
+        <input type="text" name="author" class="form-control" id="author">
     </div>
 
     <div class="form-group">
         <label for="title">title</label>
-        <input type="text" class="form-control" id="title">
+        <input type="text" name="title" class="form-control" id="title">
     </div>
 
 
     <div class="form-group">
         <label for="post_content">post content</label>
-        <input type="text" class="form-control" id="post_content">
+        <input type="text" name="post_content" class="form-control" id="post_content">
     </div>
 
     <div class="form-group">
         <label for="post_image">image url</label>
-        <input type="text" class="form-control" id="post_image">
+        <input type="text" name="post_image" class="form-control" id="post_image">
     </div>
 
     <div class="form-group">
         <label for="post_date">date</label>
-        <input type="date" class="form-control" id="post_date">
+        <input type="date" name="post_date" class="form-control" id="post_date">
     </div>
 
     

@@ -2,6 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if( session ('delete'))
+        <div>
+            {{ session('delete') }} è stato rimosso
+        </div>
+    @endif
     <table class="table w-75 mx-auto">
     <thead class="thead-dark">
         <tr>
@@ -20,8 +25,8 @@
         @foreach($posts as $post)
             <tr>
                 <th scope="row">{{ $post->id }}</th>
-                <td>{{ $post->title }}</td>
                 <td>{{ $post->author }}</td>
+                <td>{{ $post->title }}</td>
                 <td>{{ $post->post_content }}</td>
                 <td>{{ $post->post_image }}</td>
                 <td>{{ $post->post_date }}</td>

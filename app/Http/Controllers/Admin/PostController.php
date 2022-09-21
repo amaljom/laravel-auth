@@ -46,7 +46,7 @@ class PostController extends Controller
             
         $newPost->save();
 
-        return redirect()->route('admin.posts.index', $newComic->id);
+        return redirect()->route('admin.posts.show', $newComic->id)->with('created', $data['author']);
     }
 
     /**
@@ -91,7 +91,7 @@ class PostController extends Controller
             
         $newPost->save();
 
-        return redirect()->route('admin.posts.show', $post->id);
+        return redirect()->route('admin.posts.show', $post->id)->with('edited', $post->title);
     }
 
     /**
@@ -104,6 +104,6 @@ class PostController extends Controller
     {
         $post=Post::findorfail($id);
         $post->delete();
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('delete', $post->author);
     }
 }

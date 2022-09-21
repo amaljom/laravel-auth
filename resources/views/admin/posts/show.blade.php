@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if ( session ('edited'))
+    <div>
+        {{ session('edited') }} è stato modificato
+    </div>
+    @elseif(session ('created'))
+        {{ session('created') }} è stata creata
+@endif
 <div class="card">
     <div>
         <img src="{{ $Post->post_image }}" alt="">
